@@ -213,7 +213,7 @@ public class gmpuJob implements Callable<Integer>{
                             }
 
                             GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Creating temporary gma.");
-                            this.createGmaOut="temp.gma";
+                            this.createGmaOut = this.createGmaFolder + ".gma";
                             s = "\""+GmodPublishingUtility.gmadPath+File.separatorChar+GmodPublishingUtility.gmad + "\"";
                             pb = new ProcessBuilder(s,"create","-folder",this.createGmaFolder,"-out",this.createGmaOut);
                             pb.directory(new File(GmodPublishingUtility.gmadPath));
@@ -324,7 +324,7 @@ public class gmpuJob implements Callable<Integer>{
                                 }
 
                                 GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Creating temporary gma.");
-                                this.createGmaOut="temp.gma";
+                                this.createGmaOut = this.createGmaFolder + ".gma";
                                 s = "\""+GmodPublishingUtility.gmadPath+File.separatorChar+GmodPublishingUtility.gmad + "\"";
                                 pb = new ProcessBuilder(s,"create","-folder",this.createGmaFolder,"-out",this.createGmaOut);
                                 pb.directory(new File(GmodPublishingUtility.gmadPath));

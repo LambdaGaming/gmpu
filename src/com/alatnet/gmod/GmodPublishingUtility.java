@@ -408,6 +408,5 @@ public class GmodPublishingUtility {
              */
             // </editor-fold>
         }
-        saveSettings();
     }
 }

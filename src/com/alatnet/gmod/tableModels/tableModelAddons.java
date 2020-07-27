@@ -68,6 +68,6 @@ public class tableModelAddons extends AbstractTableModel {
     public void clearData(){
         int maxSize = this.tableData.size();
         this.tableData.clear();
-        fireTableRowsDeleted(0,maxSize-1);
+        fireTableRowsDeleted(0,maxSize);
     }
 }
