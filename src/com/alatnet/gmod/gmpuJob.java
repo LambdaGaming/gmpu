@@ -259,7 +259,7 @@ public class gmpuJob implements Callable<Integer>{
                         if (createGMA && createGMAExitStatus==0){
                             //delete temporary gma file and addon.json
                             GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Deleting temporary gma...");
-                            File temp_gma = new File(GmodPublishingUtility.gmadPath+File.separatorChar+"temp.gma");
+                            File temp_gma = new File( GmodPublishingUtility.gmadPath + File.separatorChar + this.createGmaFolder + ".gma");
                             if (temp_gma.delete()) GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Temporary gma deleted.");
                             else GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Error deleting temporary gma.");
                         }
@@ -379,7 +379,7 @@ public class gmpuJob implements Callable<Integer>{
                             if (createGMA && createGMAExitStatus==0){
                                 //delete temporary gma file and addon.json
                                 GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Deleting temporary gma...");
-                                File temp_gma = new File(GmodPublishingUtility.gmadPath+File.separatorChar+"temp.gma");
+                                File temp_gma = new File( GmodPublishingUtility.gmadPath + File.separatorChar + this.createGmaFolder + ".gma");
                                 if (temp_gma.delete()) GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Temporary gma deleted.");
                                 else GmodPublishingUtility.gmpuLogger.log(Level.INFO, "Error deleting temporary gma.");
                             }
