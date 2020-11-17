@@ -881,6 +881,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.tagsChkBoxes.add(this.chkWater);
         
         this.tblQueue.getSelectionModel().addListSelectionListener(new tblQueueListSelectionListener());
+        this.tblAddonList.getSelectionModel().addListSelectionListener( new tblAddonListSelectionListener() );
     }
     
     private class tblQueueListSelectionListener implements ListSelectionListener{
@@ -889,6 +890,17 @@ public class MainFrame extends javax.swing.JFrame {
             if (tblQueue.getSelectedRows().length==0) btnQueueClear.setText("Clear");
             else btnQueueClear.setText("Remove");
         }
+    }
+    
+    private class tblAddonListSelectionListener implements ListSelectionListener {
+		@Override
+		public void valueChanged( ListSelectionEvent e ) {
+			txtAddonTitle.setText( removeQuotes( ( String ) tblAddonList.getValueAt( tblAddonList.getSelectedRow(), 1 ) ) );
+		}
+		
+		private String removeQuotes( String txt ) {
+			return txt.replace( "\"", "" );
+		}
     }
     
     private void setTagsEnabled(boolean enabled){
